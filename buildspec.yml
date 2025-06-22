@@ -1,13 +1,29 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      # Ensure lifecycle hook scripts are executable
+      - echo "Install phase – making hook scripts executable"
+      - chmod +x scripts/*
+
+  pre_build:
+    commands:
+      - echo "Pre-build started on $(date)"
+
   build:
     commands:
-      - mkdir -p build
-      - cp appspec.yml build/
-      - cp -r scripts/ build/
-      - cp index.html build/
+      # Nothing to compile for this static site
+      - echo "Build phase – no compilation needed"
+
+  post_build:
+    commands:
+      - echo "Post-build completed on $(date)"
+
 artifacts:
   files:
-    - '**/*'
-  base-directory: build
+    - appspec.yml
+    - index.html
+    - scripts/**/*
+  discard-paths: no          # Keep the scripts/ folder structure
+  name: bluegreen-sample-app # Final artifact will be bluegreen-sample-app.zip
