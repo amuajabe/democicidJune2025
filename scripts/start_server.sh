@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl start nginx
+yum install -y httpd
