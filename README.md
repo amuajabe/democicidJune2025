@@ -1,9 +1,6 @@
-## 📁 Project Structure
+# 📦 Project Overview
 
- buildspec.yml # CodeBuild build instructions
-├── appspec.yml # CodeDeploy deployment instructions
-├── index.html # Sample web page
-├── scripts/ # Lifecycle hook scripts
-│ └── install_dependencies.sh
-├── LICENSE # License info
-├── README.md # This file
+- 🔧 `buildspec.yml`: Instructions for AWS CodeBuild
+- 📦 `appspec.yml`: Lifecycle config for AWS CodeDeploy
+- 📁 `scripts/`: Deployment hook scripts
+- 🌐 `index.html`: Static site content
